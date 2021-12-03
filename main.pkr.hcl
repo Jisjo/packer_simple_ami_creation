@@ -1,6 +1,5 @@
 
-############################ Variable declaration ################################
-
+############################ Variable declaration ############################
 variable "a_key" {
   type    = string
   default = "AKIAVOYUBUYWFVP7JDU4"
@@ -35,7 +34,7 @@ variable "type" {
 }
 
 
-############################  AMI declaration ################################
+############################ AMI declaration ############################
 
 
 source "amazon-ebs" "httpd-webserver" {
@@ -53,7 +52,7 @@ source "amazon-ebs" "httpd-webserver" {
   }
 }
 
-############################################# Building AMI #############################################
+############################ Building AMI ################################
 
 build {
   sources = ["source.amazon-ebs.httpd-webserver"]
