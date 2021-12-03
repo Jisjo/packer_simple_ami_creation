@@ -55,8 +55,10 @@ source "amazon-ebs" "httpd-webserver" {
 ############################ Building AMI ################################
 
 build {
-  sources = ["source.amazon-ebs.httpd-webserver"]
-
+  name           = "linux-AMI-builder"
+  source "source.amazon-ebs.httpd-webserver" {
+    ssh_username = "${var.user}"
+  }
 
 
   provisioner "shell" {
